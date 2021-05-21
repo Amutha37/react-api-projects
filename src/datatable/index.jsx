@@ -18,7 +18,7 @@ const Datatable = ({ dataa }) => {
         {dataa.map((row) => (
           <tr key={row.name}>
             {columns.map((column) => (
-              <td>{row[column]}</td>
+              <td key={column.id}>{row[column]}</td>
             ))}
           </tr>
         ))}

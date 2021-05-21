@@ -12,18 +12,10 @@ function App() {
       Life_span: "",
       Description: "",
       Temperament: "",
-      // Weight: '',
     },
   ]);
   const [query, setQuery] = useState("");
   const [searchColumns, setSearchColumns] = useState(["name", "origin"]);
-
-  // const [searchColumns, setSearchColumns] = useState([
-  //   {
-  //     Name: "",
-  //     Origin: "",
-  //   },
-  // ]);
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -39,7 +31,7 @@ function App() {
         );
         let datainfo = [];
         let catData = result.data;
-
+        // console.log(catData);
         for (let info in catData) {
           datainfo.push({
             id: catData[info].id,
@@ -75,7 +67,7 @@ function App() {
 
   return (
     <Fragment>
-      <h1>CAT API </h1>
+      <h1>Cat API </h1>
 
       <form>
         <label>Search :</label>
