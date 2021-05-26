@@ -15,10 +15,10 @@ const Datatable = ({ dataa }) => {
         </tr>
       </thead>
       <tbody>
-        {dataa.map((row) => (
-          <tr key={row.name}>
-            {columns.map((column) => (
-              <td key={column.id}>{row[column]}</td>
+        {dataa.map((row, index) => (
+          <tr key={index}>
+            {columns.map((column, id) => (
+              <td key={id}>{row[column]}</td>
             ))}
           </tr>
         ))}
