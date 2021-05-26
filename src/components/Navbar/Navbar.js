@@ -6,7 +6,7 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
 
   return (
-    <container>
+    <div>
       <nav className="navbar">
         <div className="nav-container">
           {/* <Link exact to="/" className="nav-logo">
@@ -15,27 +15,17 @@ const Navbar = () => {
           </Link> */}
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link exact to="/" activeClassName="active" className="nav-links">
+              <Link exact to="/" className="active" className="nav-links">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                exact
-                to="/imgdata"
-                activeClassName="active"
-                className="nav-Links"
-              >
+              <Link to="/imgdata" className="active" className="nav-Links">
                 Imagedata
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                exact
-                to="/hoverimg"
-                activeClassName="active"
-                className="nav-Links"
-              >
+              <Link to="/hoverimg" className="active" className="nav-Links">
                 Hoverimage
               </Link>
             </li>
@@ -45,7 +35,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </container>
+    </div>
   );
 };
 

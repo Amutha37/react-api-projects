@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(12 34 12 0.3);
+  background-color: rgb(112 134 123);
   /* background: transparent; */
   height: 80px;
   display: flex;
@@ -46,6 +46,7 @@
 .nav-item {
   line-height: 40px;
   margin-right: 1rem;
+  margin-left: 8px;
 }
 .nav-item:after {
   content: "";
@@ -63,9 +64,9 @@
   color: #ffdd40;
   border: 1px solid #ffdd40;
 }
-/* .nav-menu .active {
-    background: #1f5156;
-  } */
+.nav-menu .active {
+  background: #1f5156;
+}
 .nav-icon {
   display: none;
 }
