@@ -1,14 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import NavBar from "./components/Navbar/Navbar";
-
-// import requests from "./request";
-// import Datatable from "./components/datatable";
-// import Dataimagetable from "./components/imagetable/Dataimagetable";
 
 import Hoverdatatable from "./Hoverdatatable";
-function Hoverdataapp() {
+function Hoverdogdataapp() {
   const [imgdata, setImgData] = useState([
     {
       id: "",
@@ -88,4 +82,4 @@ function Hoverdataapp() {
   );
 }
 
-export default Hoverdataapp;
+export default Hoverdogdataapp;

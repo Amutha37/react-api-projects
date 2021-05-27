@@ -34,6 +34,7 @@ h1 {
 .dml_table tr th:last-child,
 .dml_table tr td:last-child {
   border-right: 4px solid rgb(19, 211, 163);
+  margin-bottom: 5rem;
 }
 .dml_table tr:last-child th,
 .dml_table tr:last-child td {

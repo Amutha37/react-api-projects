@@ -43,8 +43,8 @@ h1 {
 }
 
 /* .dml_table tr:first-child td {
-  margin-top: 5rem;
-} */
+    margin-top: 5rem;
+  } */
 .dml_table tr td {
   font-weight: 300;
 }
@@ -52,7 +52,7 @@ h1 {
 .dml_table tr th {
   font-weight: 700;
 }
-/* img {
-  width: 5rem;
-  height: 6rem;
-} */
+img {
+  width: 17rem;
+  height: 12rem;
+}

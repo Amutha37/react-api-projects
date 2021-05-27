@@ -28,7 +28,7 @@ function Dataselectapp() {
 
       try {
         const result = await axios.get(
-          `https://api.thecatapi.com/v1/breeds?attach_breed=0&api_key=${process.env.REACT_APP_API_kEY}`
+          `https://api.thecatapi.com/v1/breeds?attach_breed=0&api_key=${process.env.REACT_APP_API_KEY_CAT}`
         );
 
         let datainfo = [];

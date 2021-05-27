@@ -39,11 +39,15 @@ function Imgdataapp() {
 
         for (let infoo in catData) {
           let imgul = "";
-          if (!catData[infoo].image) {
-            imgul = "";
-          } else {
-            imgul = catData[infoo].image.url;
-          }
+          !catData[infoo].image
+            ? (imgul = "")
+            : (imgul = catData[infoo].image.url);
+
+          // if (!catData[infoo].image) {
+          //   imgul = "";
+          // } else {
+          //   imgul = catData[infoo].image.url;
+          // }
           datainforr.push({
             id: catData[infoo].id,
             name: catData[infoo].name,
@@ -64,7 +68,7 @@ function Imgdataapp() {
       setIsLoadingg(false);
     };
     fetchImageData();
-    return clearTimeout(fetchImageData);
+    // return clearTimeout(fetchImageData);
   }, []);
 
   return (

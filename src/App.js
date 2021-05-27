@@ -4,9 +4,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 // import requests from "./request";
+// import Hoverdogdataapp from "/Users/amuthamuhunthan/APIPROJECTS/react-api-projects/src/components/Dogapi/hover/Hoverdogdataapp.js";
+
+import Hoverdogdataapp from "./components/Dogapi/hover/Hoverdogdataapp";
+import Alldogimgapp from "./components/Dogapi/alldogimg/Alldogimgapp";
+// import Dataselectapp from "./components/Datatable/Dataselectapp";
 import Dataselectapp from "./components/Datatable/Dataselectapp";
 
-import Hoverdataapp from "./components/HoverImage/Hoverdataapp";
+import Hoverdataapp from "./components/HoverImage/Hoverdogdataapp";
 import Imgdataapp from "./components/Imagetable/Imgdataapp";
 const App = () => {
   return (
@@ -17,9 +22,11 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Dataselectapp} />
 
-            <Route exact path="/imgdata" component={Imgdataapp} />
+            <Route path="/imgdata" component={Imgdataapp} />
 
-            <Route exact path="/hoverimg" component={Hoverdataapp} />
+            <Route path="/hoverimg" component={Hoverdataapp} />
+            <Route path="/dognamehover" component={Hoverdogdataapp} />
+            <Route path="/alldogimg" component={Alldogimgapp} />
           </Switch>
         </div>
       </Router>

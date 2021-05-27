@@ -1,6 +1,4 @@
 h1 {
-  padding: 4px;
-  color: blue;
   text-align: center;
 }
 
@@ -36,6 +34,7 @@ h1 {
 .dml_table tr th:last-child,
 .dml_table tr td:last-child {
   border-right: 4px solid rgb(19, 211, 163);
+  margin-bottom: 5rem;
 }
 .dml_table tr:last-child th,
 .dml_table tr:last-child td {
@@ -43,8 +42,8 @@ h1 {
 }
 
 /* .dml_table tr:first-child td {
-  margin-top: 5rem;
-} */
+    margin-top: 5rem;
+  } */
 .dml_table tr td {
   font-weight: 300;
 }
@@ -52,7 +51,21 @@ h1 {
 .dml_table tr th {
   font-weight: 700;
 }
-/* img {
-  width: 5rem;
-  height: 6rem;
-} */
+a img {
+  width: 30rem;
+  height: 32rem;
+}
+a {
+  text-decoration: none;
+}
+a > img {
+  display: none;
+}
+a:hover > img {
+  display: block;
+  position: absolute;
+}
+
+.nameimg {
+  display: flex;
+}
