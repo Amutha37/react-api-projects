@@ -73,7 +73,7 @@ function Imgdataapp() {
 
   return (
     <Fragment>
-      <h1>Cat API </h1>
+      <h1>Database on cat's characteristics</h1>
 
       {/* Error message */}
       {isErrorr && <div>Something went wrong ...</div>}
@@ -86,7 +86,6 @@ function Imgdataapp() {
           <Dataimagetable dataimg={imgdata} />
         </div>
       )}
-      <div className="space"></div>
     </Fragment>
   );
 }

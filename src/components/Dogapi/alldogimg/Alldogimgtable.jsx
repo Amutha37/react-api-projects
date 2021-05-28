@@ -1,20 +1,12 @@
 import React from "react";
-import "./alldogimgtable.css";
+// import "./alldogimgtable.css";
 
 // npm install --save react-jsx
 
 const Alldogimgtable = ({ allimgdata }) => {
-  //   const [show, setShow] = useState(false);
-  //   const mouseOver = () => {
-  //     setShow(true);
-  //   };
-  //   const mouseOut = () => {
-  //     setShow(false);
-  //   };
-
   return (
     <table className="dml_table" cellPadding={0} cellSpacing={0}>
-      <thead>
+      <thead className="sticky-thc">
         <tr>
           <th>Id</th>
           <th>Image</th>

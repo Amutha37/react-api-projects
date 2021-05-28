@@ -11,7 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
@@ -19,4 +19,4 @@ h1 {
   padding: 4px;
   color: blue;
   text-align: center;
-}
+} */

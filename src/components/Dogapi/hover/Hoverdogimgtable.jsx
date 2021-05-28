@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./hoverdogimgtable.css";
+// import "./hoverdogimgtable.css";
 
 // npm install --save react-jsx
 
@@ -14,7 +14,7 @@ const Hoverdogimgtable = ({ hoverimgdata }) => {
 
   return (
     <table className="dml_table" cellPadding={0} cellSpacing={0}>
-      <thead>
+      <thead className="sticky-thc">
         <tr>
           <th>Id</th>
           <th>Name & Image</th>

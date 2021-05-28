@@ -1,7 +1,3 @@
-h1 {
-  text-align: center;
-}
-
 .dml_table {
   width: 100%;
   box-sizing: border-box;
@@ -13,18 +9,20 @@ h1 {
 
 .dml_table tr th {
   text-align: left;
-}
-
-.dml_table tr th {
   border-top: 4px solid rgb(27, 235, 214);
-  color: rgba(14, 14, 20, 0.77);
-  font-size: 1rem;
+  /* background-color: #1f5156; */
+  background: #1f5156;
+  /* color: rgba(14, 14, 20, 0.77); */
+  font-size: 2rem;
+  color: white;
+  font-size: 3rem;
   padding: 0.5rem;
   border-left: 4px solid rgb(29, 225, 173);
+  font-weight: 700;
 }
 
 .dml_table tr td {
-  color: rgba(13, 13, 14, 0.77);
+  /* color: rgba(13, 13, 14, 0.77); */
   font-size: 1rem;
   padding: 0.5rem;
   border-top: 2px solid rgb(27, 235, 214);
@@ -34,22 +32,47 @@ h1 {
 .dml_table tr th:last-child,
 .dml_table tr td:last-child {
   border-right: 4px solid rgb(19, 211, 163);
-  margin-bottom: 5rem;
 }
 .dml_table tr:last-child th,
 .dml_table tr:last-child td {
   border-bottom: 2px solid rgb(21, 187, 145);
 }
 
-/* .dml_table tr:first-child td {
-    margin-top: 5rem;
-  } */
 .dml_table tr td {
   font-weight: 300;
 }
 
-.dml_table tr th {
-  font-weight: 700;
+h1 {
+  text-align: center;
+  tab-size: 2rem;
+}
+label {
+  margin-left: 2rem;
+  margin-right: 3px;
+}
+input {
+  border: 3px solid rgba(14, 14, 20, 0.77);
+  height: 1.6rem;
+}
+
+.searchbox {
+  width: 30%;
+}
+.checkbox {
+  width: 100%;
+}
+.sticky-thc th {
+  position: sticky;
+  top: 0;
+}
+table {
+  margin-bottom: 30rem;
+  height: 5rem;
+  background-color: antiquewhite;
+}
+img {
+  width: 17rem;
+  height: 12rem;
 }
 a img {
   width: 30rem;
@@ -64,8 +87,4 @@ a > img {
 a:hover > img {
   display: block;
   position: absolute;
-}
-
-.nameimg {
-  display: flex;
 }

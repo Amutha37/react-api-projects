@@ -86,7 +86,7 @@ function Hoverdogdataapp() {
 
   return (
     <>
-      <h1>Dog API </h1>
+      <h1>Database on dog's characteristics</h1>
 
       {/* Error message */}
       {isErrorr && <div>Something went wrong ...</div>}

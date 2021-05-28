@@ -1,6 +1,7 @@
 import React from "react";
-import "./tablestyles.css";
+// import "../../globalstyles.css";
 
+// import "/Users/amuthamuhunthan/APIPROJECTS/react-api-projects/src/globalstyles.css";
 // npm install --save react-jsx
 
 const Datatable = ({ dataa }) => {
@@ -8,7 +9,7 @@ const Datatable = ({ dataa }) => {
   // console.log(dataa);
   return (
     <table className="dml_table" cellPadding={0} cellSpacing={0}>
-      <thead className="sticky">
+      <thead className="sticky-thc">
         <tr>
           {dataa[0] &&
             columns.map((heading, index) => <th key={index}>{heading}</th>)}

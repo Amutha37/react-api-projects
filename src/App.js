@@ -2,17 +2,17 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-
+import "./globalstyles.css";
 // import requests from "./request";
 // import Hoverdogdataapp from "/Users/amuthamuhunthan/APIPROJECTS/react-api-projects/src/components/Dogapi/hover/Hoverdogdataapp.js";
 
 import Hoverdogdataapp from "./components/Dogapi/hover/Hoverdogdataapp";
 import Alldogimgapp from "./components/Dogapi/alldogimg/Alldogimgapp";
 // import Dataselectapp from "./components/Datatable/Dataselectapp";
-import Dataselectapp from "./components/Datatable/Dataselectapp";
+import Dataselectapp from "./components/Catapi/Datatable/Dataselectapp";
 
-import Hoverdataapp from "./components/HoverImage/Hoverdogdataapp";
-import Imgdataapp from "./components/Imagetable/Imgdataapp";
+import Hoverdataapp from "./components/Catapi/HoverImage/Hoverdogdataapp";
+import Imgdataapp from "./components/Catapi/Imagetable/Imgdataapp";
 const App = () => {
   return (
     <Fragment>
