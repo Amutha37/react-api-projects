@@ -56,3 +56,8 @@ h1 {
   width: 5rem;
   height: 6rem;
 } */
+table {
+  margin-top: 6rem;
+  height: 5rem;
+  background-color: antiquewhite;
+}

@@ -16,7 +16,7 @@ function Dataselectapp() {
     },
   ]);
   const [query, setQuery] = useState("");
-  const [searchColumns, setSearchColumns] = useState(["name", "origin"]);
+  const [searchColumns, setSearchColumns] = useState(["origin"]);
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -56,7 +56,7 @@ function Dataselectapp() {
     };
     fetchData();
     return clearTimeout(fetchData);
-  }, [dataa]);
+  }, []);
 
   // not all data is string
   const dataFilter = (rows) => {
@@ -71,7 +71,7 @@ function Dataselectapp() {
 
   return (
     <div>
-      <h1>Cat API </h1>
+      <h1>Database on cat's characteristics</h1>
       <div className="checkboxes">
         <form>
           <div className="searchbox">

@@ -8,7 +8,7 @@ const Datatable = ({ dataa }) => {
   // console.log(dataa);
   return (
     <table className="dml_table" cellPadding={0} cellSpacing={0}>
-      <thead>
+      <thead className="sticky">
         <tr>
           {dataa[0] &&
             columns.map((heading, index) => <th key={index}>{heading}</th>)}

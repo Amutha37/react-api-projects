@@ -86,6 +86,7 @@ function Imgdataapp() {
           <Dataimagetable dataimg={imgdata} />
         </div>
       )}
+      <div className="space"></div>
     </Fragment>
   );
 }

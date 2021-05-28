@@ -65,15 +65,12 @@ function Alldogimgapp() {
             origin: oricontry,
             life_span: doghoverimgdata[infor].life_span,
             temperament: doghoverimgdata[infor].temperament,
-            //   Image: {
-            //     url:"",
-
             url: dogimg,
           });
         }
         // console.log(datainforr);
-        setAllimgdata(datainforr);
 
+        setAllimgdata(datainforr);
         setIsLoadingg(false);
       } catch (error) {
         setIsErrorr(true);
@@ -86,7 +83,7 @@ function Alldogimgapp() {
 
   return (
     <>
-      <h1>Dog API </h1>
+      <h1>Database on dog's characteristics</h1>
 
       {/* Error message */}
       {isErrorr && <div>Something went wrong ...</div>}
