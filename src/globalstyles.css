@@ -7,11 +7,15 @@
   border-collapse: collapse;
 }
 
+/* .dml_table tr th {
+
+} */
+
 .dml_table tr th {
   text-align: left;
   border-top: 4px solid rgb(27, 235, 214);
   /* background-color: #1f5156; */
-  background: #1f5156;
+  background: #295e63;
   /* color: rgba(14, 14, 20, 0.77); */
   font-size: 2rem;
   color: white;
@@ -41,7 +45,6 @@
 .dml_table tr td {
   font-weight: 300;
 }
-
 h1 {
   text-align: center;
   tab-size: 2rem;
@@ -68,7 +71,7 @@ input {
 table {
   margin-bottom: 30rem;
   height: 5rem;
-  background-color: antiquewhite;
+  background-color: rgb(250, 235, 215);
 }
 img {
   width: 17rem;

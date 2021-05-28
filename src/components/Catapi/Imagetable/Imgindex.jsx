@@ -1,8 +1,6 @@
 import React from "react";
 // import "./imgindex.css";
-
 // npm install --save react-jsx
-
 const Dataimagetable = ({ dataimg }) => {
   return (
     <>

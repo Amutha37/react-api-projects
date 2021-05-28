@@ -1,9 +1,6 @@
 import React from "react";
 // import "../../globalstyles.css";
 
-// import "/Users/amuthamuhunthan/APIPROJECTS/react-api-projects/src/globalstyles.css";
-// npm install --save react-jsx
-
 const Datatable = ({ dataa }) => {
   const columns = dataa[0] && Object.keys(dataa[0]);
   // console.log(dataa);
