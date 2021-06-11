@@ -71,7 +71,7 @@ function Dataselectapp() {
 
   return (
     <div>
-      <h1>Database on cat's characteristics</h1>
+      <h1>Cat API database</h1>
       <div className="checkboxes">
         <form>
           <div className="searchbox">
@@ -107,7 +107,6 @@ function Dataselectapp() {
         </form>
       </div>
 
-      {/* Error message */}
       {isError && <div>Something went wrong ...</div>}
 
       {/* loading data  */}

@@ -1,40 +1,32 @@
-// import axios from "axios";
 import React, { Fragment } from "react";
+
+import Catimgdata from "./components/Catapi/Catimgdata";
+import { Dogimgdata } from "./components/Dogapi/Dogimgdata";
+
+import Dataselectapp from "./components/Datatable/Dataselectapp";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+
+// components
+import Menu from "./components/navigation/Menu";
 import "./globalstyles.css";
-// import requests from "./request";
-// import Hoverdogdataapp from "/Users/amuthamuhunthan/APIPROJECTS/react-api-projects/src/components/Dogapi/hover/Hoverdogdataapp.js";
 
-import Hoverdogdataapp from "./components/Dogapi/hover/Hoverdogdataapp";
-import Alldogimgapp from "./components/Dogapi/alldogimg/Alldogimgapp";
-// import Dataselectapp from "./components/Datatable/Dataselectapp";
-import Dataselectapp from "./components/Catapi/Datatable/Dataselectapp";
-
-import Hoverdataapp from "./components/Catapi/HoverImage/Hoverdogdataapp";
-import Imgdataapp from "./components/Catapi/Imagetable/Imgdataapp";
-const App = () => {
+function App() {
   return (
     <Fragment>
       <Router>
         <div className="navrender pages">
-          <Navbar />
+          <Menu />
           <Switch>
             <Route exact path="/" component={Dataselectapp} />
-
-            <Route path="/imgdata" component={Imgdataapp} />
-
-            <Route path="/hoverimg" component={Hoverdataapp} />
-            <Route path="/dognamehover" component={Hoverdogdataapp} />
-            <Route path="/alldogimg" component={Alldogimgapp} />
+            <Route exact path="/catapi" component={Catimgdata} />
+            {/* component={null} /> */}
+            <Route exact path="/dogapi" component={Dogimgdata} />
           </Switch>
         </div>
       </Router>
-      {/* <Hoverdataapp />
-      <Dataselectapp />
-      <Imgdataapp /> */}
     </Fragment>
   );
-};
+}
 
 export default App;

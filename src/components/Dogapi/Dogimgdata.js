@@ -1,9 +1,13 @@
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+// import Navbar from "./components/navigation/Navbar";
 
-import Hoverdogimgtable from "./Hoverdogimgtable";
-function Hoverdogdataapp() {
-  const [hoverimgdata, sethoverimgdata] = useState([
+import { Alldogimgtable } from "./Alldogimgtable";
+
+export function Dogimgdata() {
+  const [isErrorr, setIsErrorr] = useState(false);
+  const [isLoadingg, setIsLoadingg] = useState(false);
+  const [apiData, setApiData] = useState([
     {
       id: "",
       bred_for: "",
@@ -17,13 +21,10 @@ function Hoverdogdataapp() {
     },
   ]);
 
-  const [isLoadingg, setIsLoadingg] = useState(false);
-  const [isErrorr, setIsErrorr] = useState(false);
-
   useEffect(() => {
     const fetchData = async () => {
       setIsErrorr(false);
-      setIsLoadingg(true);
+      //   setIsLoadingg(true);
 
       try {
         const resultt = await axios.get(
@@ -65,15 +66,11 @@ function Hoverdogdataapp() {
             origin: oricontry,
             life_span: doghoverimgdata[infor].life_span,
             temperament: doghoverimgdata[infor].temperament,
-            //   Image: {
-            //     url:"",
-
             url: dogimg,
           });
         }
-        // console.log(datainforr);
-        sethoverimgdata(datainforr);
 
+        setApiData(datainforr);
         setIsLoadingg(false);
       } catch (error) {
         setIsErrorr(true);
@@ -85,22 +82,20 @@ function Hoverdogdataapp() {
   }, []);
 
   return (
-    <>
-      <h1>Database on dog's characteristics</h1>
-
+    <div className="heading">
+      <h1>Dogs characteristics</h1> <br />
       {/* Error message */}
       {isErrorr && <div>Something went wrong ...</div>}
-
       {/* loading data  */}
       {isLoadingg ? (
         <div>Loading ...</div>
       ) : (
         <div>
-          <Hoverdogimgtable hoverimgdata={hoverimgdata} />
+          <Alldogimgtable apiData={apiData} />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
-export default Hoverdogdataapp;
+// export default Dogimgdata;
