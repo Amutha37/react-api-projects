@@ -70,7 +70,7 @@ function Dataselectapp() {
   const columns = dataa[0] && Object.keys(dataa[0]);
 
   return (
-    <div>
+    <>
       <h1>Cat API database</h1>
       <div className="checkboxes">
         <form>
@@ -117,7 +117,7 @@ function Dataselectapp() {
           <Datatable dataa={dataFilter(dataa)} />{" "}
         </div>
       )}
-    </div>
+    </>
   );
 }
 

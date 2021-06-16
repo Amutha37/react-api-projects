@@ -6,7 +6,6 @@
 .m-item {
   position: absolute;
   top: 0;
-
   width: 5.5em;
   background-color: #002366;
   box-shadow: 1px 2px 2px #a77dda;
@@ -20,7 +19,7 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #edffec;
   cursor: pointer;
 
@@ -32,22 +31,9 @@
 .m-logo {
   z-index: 1;
 }
-.open-1 {
-  top: 1.8em;
-  background-color: #00ced1;
-  box-shadow: 1px 2px 2px #a77dda;
-}
-.open-2 {
-  top: 3.6em;
-  background-color: #7b68ee;
-}
-.open-3 {
-  top: 5.4em;
-  background-color: #6495ed;
-}
+
 @media screen and (max-width: 560px) {
   .m-item {
-    top: 0.3em;
     width: 6em;
     font-size: 1em;
   }
@@ -56,20 +42,5 @@
   }
   .m-logo {
     z-index: 1;
-  }
-  .open-1 {
-    top: 2.1em;
-    background-color: #00ced1;
-    box-shadow: 1px 2px 2px #a77dda;
-  }
-  .open-2 {
-    top: 3.9em;
-    background-color: #7b68ee;
-    box-shadow: 1px 2px 2px #a77dda;
-  }
-  .open-3 {
-    top: 5.7em;
-    background-color: #6495ed;
-    box-shadow: 1px 2px 2px #a77dda;
   }
 }
