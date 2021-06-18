@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-// import Navbar from "./components/navigation/Navbar";
-
+import { useFetch } from "../useFetch";
 import { Alldogimgtable } from "./Alldogimgtable";
 
 export function Dogimgdata() {
-  const [isErrorr, setIsErrorr] = useState(false);
-  const [isLoadingg, setIsLoadingg] = useState(false);
+  const url = `https://api.thedogapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_kEY_DOG}`;
+  const { status, results, error } = useFetch(url);
+  //   const [isErrorr, setIsErrorr] = useState(false);
+  //   const [isLoadingg, setIsLoadingg] = useState(false);
   const [apiData, setApiData] = useState([
     {
       id: "",
@@ -22,80 +22,64 @@ export function Dogimgdata() {
   ]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsErrorr(false);
-      //   setIsLoadingg(true);
+    let datainforr = [];
+    let doghoverimgdata = [];
+    doghoverimgdata = results;
 
-      try {
-        const resultt = await axios.get(
-          `https://api.thedogapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_kEY_DOG}`
-        );
+    for (let infor in doghoverimgdata) {
+      // check if origin or country code availabe
 
-        let datainforr = [];
-        let doghoverimgdata = resultt.data;
-        // console.log(resultt.data);
-        for (let infor in doghoverimgdata) {
-          // check if origin or country code availabe
-
-          let oricontry = "";
-          if (
-            !doghoverimgdata[infor].origin &&
-            !doghoverimgdata[infor].country_code
-          ) {
-            oricontry = "";
-          } else {
-            doghoverimgdata[infor].origin
-              ? (oricontry = doghoverimgdata[infor].origin)
-              : (oricontry = doghoverimgdata[infor].country_code);
-          }
-          // check if image available
-
-          let dogimg = "";
-          if (!doghoverimgdata[infor].image) {
-            dogimg = "";
-          } else {
-            dogimg = doghoverimgdata[infor].image.url;
-          }
-
-          datainforr.push({
-            id: doghoverimgdata[infor].id,
-            bred_for: doghoverimgdata[infor].bred_for,
-            breed_group: doghoverimgdata[infor].breed_group,
-            height: doghoverimgdata[infor].height.metric,
-            name: doghoverimgdata[infor].name,
-            origin: oricontry,
-            life_span: doghoverimgdata[infor].life_span,
-            temperament: doghoverimgdata[infor].temperament,
-            url: dogimg,
-          });
-        }
-
-        setApiData(datainforr);
-        setIsLoadingg(false);
-      } catch (error) {
-        setIsErrorr(true);
+      let oricontry = "";
+      if (
+        !doghoverimgdata[infor].origin &&
+        !doghoverimgdata[infor].country_code
+      ) {
+        oricontry = "";
+      } else {
+        doghoverimgdata[infor].origin
+          ? (oricontry = doghoverimgdata[infor].origin)
+          : (oricontry = doghoverimgdata[infor].country_code);
       }
-      setIsLoadingg(false);
-    };
-    fetchData();
-    return clearTimeout(fetchData);
-  }, []);
+      // check if image available
+
+      let dogimg = "";
+      if (!doghoverimgdata[infor].image) {
+        dogimg = "";
+      } else {
+        dogimg = doghoverimgdata[infor].image.url;
+      }
+
+      datainforr.push({
+        id: doghoverimgdata[infor].id,
+        bred_for: doghoverimgdata[infor].bred_for,
+        breed_group: doghoverimgdata[infor].breed_group,
+        height: doghoverimgdata[infor].height.metric,
+        name: doghoverimgdata[infor].name,
+        origin: oricontry,
+        life_span: doghoverimgdata[infor].life_span,
+        temperament: doghoverimgdata[infor].temperament,
+        url: dogimg,
+      });
+    }
+    setApiData(datainforr);
+  }, [results]);
 
   return (
     <div className="heading">
       <h1>Dogs characteristics</h1> <br />
-      {/* Error message */}
-      {isErrorr && <div>Something went wrong ...</div>}
-      {/* loading data  */}
-      {isLoadingg ? (
-        <div>Loading ...</div>
-      ) : (
-        <div>
-          <Alldogimgtable apiData={apiData} />
-        </div>
-      )}
+      <main>
+        {status === "idle" && (
+          <div> Let's get started by searching for an article! </div>
+        )}
+        {status === "error" && <div>{error}</div>}
+        {status === "fetching" && <div className="loading"></div>}
+        {status === "fetched" && (
+          <>
+            <Alldogimgtable apiData={apiData} />
+          </>
+        )}
+      </main>
     </div>
   );
 }
-
 // export default Dogimgdata;

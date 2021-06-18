@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-// import Navbar from "./components/navigation/Navbar";
+import React, { useState, useEffect } from "react";
+
+import { useFetch } from "../useFetch";
 
 import { Allcatimgtable } from "./Allcatimgtable";
 
-function Catimgdata() {
-  const [isErrorr, setIsErrorr] = useState(false);
-  const [isLoadingg, setIsLoadingg] = useState(false);
-  const [apicatData, setApiapicatData] = useState([
+export function Catimgdata() {
+  const url = `https://api.thecatapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_kEY_DOG}`;
+  const { status, results, error } = useFetch(url);
+  const [apicatData, setApicatData] = useState([
     {
       id: "",
       name: "",
@@ -20,47 +20,28 @@ function Catimgdata() {
   ]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsErrorr(false);
-      //   setIsLoadingg(true);
+    let datainforr = [];
+    let cathoverimgdata = results;
+    for (let infoo in cathoverimgdata) {
+      // check if origin or country code availabe
+      let imgul = "";
+      !cathoverimgdata[infoo].image
+        ? (imgul = "")
+        : (imgul = cathoverimgdata[infoo].image.url);
 
-      try {
-        const resultt = await axios.get(
-          `https://api.thecatapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_KEY_CAT}`
-          //   `https://api.thecatapi.com/v1/breeds?attach_breed=0&api_key=${process.env.REACT_APP_API_KEY_CAT}`
-        );
+      datainforr.push({
+        id: cathoverimgdata[infoo].id,
+        name: cathoverimgdata[infoo].name,
+        origin: cathoverimgdata[infoo].origin,
+        Life_span: cathoverimgdata[infoo].life_span,
+        Description: cathoverimgdata[infoo].description,
+        Temperament: cathoverimgdata[infoo].temperament,
+        url: imgul,
+      });
+    }
 
-        let datainforr = [];
-        let cathoverimgdata = resultt.data;
-        console.log(resultt.data);
-        for (let infoo in cathoverimgdata) {
-          // check if origin or country code availabe
-          let imgul = "";
-          !cathoverimgdata[infoo].image
-            ? (imgul = "")
-            : (imgul = cathoverimgdata[infoo].image.url);
-
-          datainforr.push({
-            id: cathoverimgdata[infoo].id,
-            name: cathoverimgdata[infoo].name,
-            origin: cathoverimgdata[infoo].origin,
-            Life_span: cathoverimgdata[infoo].life_span,
-            Description: cathoverimgdata[infoo].description,
-            Temperament: cathoverimgdata[infoo].temperament,
-            url: imgul,
-          });
-        }
-        console.log(datainforr);
-        setApiapicatData(datainforr);
-        setIsLoadingg(false);
-      } catch (error) {
-        setIsErrorr(true);
-      }
-      setIsLoadingg(false);
-    };
-    fetchData();
-    return clearTimeout(fetchData);
-  }, []);
+    setApicatData(datainforr);
+  }, [results]);
 
   return (
     <>
@@ -69,16 +50,19 @@ function Catimgdata() {
       </div>
       {/* <br /> */}
       {/* Error message */}
-      {isErrorr && <div>Something went wrong ...</div>}
-      {/* loading data  */}
-      {isLoadingg ? (
-        <div>Loading ...</div>
-      ) : (
-        <div>
-          <Allcatimgtable apicatData={apicatData} />
-        </div>
-      )}
+      <main>
+        {status === "idle" && (
+          <div> Let's get started by searching for an article! </div>
+        )}
+        {status === "error" && <div>{error}</div>}
+        {status === "fetching" && <div className="loading"></div>}
+        {status === "fetched" && (
+          <>
+            <Allcatimgtable apicatData={apicatData} />
+          </>
+        )}
+      </main>
     </>
   );
 }
-export default Catimgdata;
+// export default Catimgdata;

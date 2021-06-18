@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import dataimg from "./dataimg1.jpeg";
 // data
 import data from "./menudata.json";
 
@@ -48,12 +48,14 @@ const Menu = (props) => {
   };
 
   return (
-    <div className="Menu">
-      <div className={"m-item m-logo"} onClick={() => setOpenMenu(!openMenu)}>
-        Menu <i className="fab fa-react"></i>
-      </div>
+    <div className="menucontainer">
+      <div className="Menu">
+        <div className={"m-item m-logo"} onClick={() => setOpenMenu(!openMenu)}>
+          Menu <i className="fab fa-react"></i>
+        </div>
 
-      {renderMenuItems(data)}
+        {renderMenuItems(data)}
+      </div>
     </div>
   );
 };

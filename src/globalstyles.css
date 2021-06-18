@@ -30,12 +30,12 @@ h1 {
   font-size: 1rem;
   padding: 0.6rem;
   color: white;
-  border-bottom: 4px solid rgb(27, 207, 235);
-  border-top: 4px solid rgb(27, 235, 214);
-  border-left: 4px solid rgb(27, 235, 214);
+  border-bottom: 4px solid rgb(2, 14, 11);
+  border-top: 4px solid rgb(2, 14, 11);
+  border-left: 4px solid rgb(2, 14, 11);
 }
 .dml_table tr th:last-child {
-  border-right: 4px solid rgb(27, 235, 214);
+  border-right: 4px solid rgb(2, 14, 11);
 }
 .dml_table tr td {
   color: rgba(13, 13, 14, 0.77);
@@ -157,7 +157,7 @@ p:hover > img {
   background-color: transparent;
   border: none;
   color: rgb(27, 58, 152);
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
 }

@@ -1,3 +1,7 @@
+.menucontainer {
+  background-image: url(./dataimg1.jpeg);
+  height: 100%;
+}
 .Menu {
   position: relative;
   margin: 2em 3em;

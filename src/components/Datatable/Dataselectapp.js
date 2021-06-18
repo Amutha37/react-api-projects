@@ -1,9 +1,10 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-
+import { useFetch } from "../useFetch";
 import Datatable from "./Datatable";
 
 function Dataselectapp() {
+  const url = `https://api.thecatapi.com/v1/breeds?api_key=${process.env.REACT_APP_API_kEY_DOG}`;
+  const { status, results, error } = useFetch(url);
   const [dataa, setDataa] = useState([
     {
       id: "",
@@ -18,45 +19,35 @@ function Dataselectapp() {
   const [query, setQuery] = useState("");
   const [searchColumns, setSearchColumns] = useState(["origin"]);
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [isError, setIsError] = useState(false);
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setIsError(false);
+  //     setIsLoading(true);
+
+  //     try {
+  //       const result = await axios.get(
+  //         `https://api.thecatapi.com/v1/breeds?attach_breed=0&api_key=${process.env.REACT_APP_API_KEY_CAT}`
+  //       );
   useEffect(() => {
-    const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
+    let datainfo = [];
+    let catData = results;
+    for (let info in catData) {
+      datainfo.push({
+        id: catData[info].id,
+        name: catData[info].name,
+        origin: catData[info].origin,
+        Life_span: catData[info].life_span,
+        Description: catData[info].description,
+        Temperament: catData[info].temperament,
+        // Image: catData[info].image,
+      });
+    }
 
-      try {
-        const result = await axios.get(
-          `https://api.thecatapi.com/v1/breeds?attach_breed=0&api_key=${process.env.REACT_APP_API_KEY_CAT}`
-        );
-
-        let datainfo = [];
-        let catData = result.data;
-        // console.log(catData);
-        for (let info in catData) {
-          datainfo.push({
-            id: catData[info].id,
-            name: catData[info].name,
-            origin: catData[info].origin,
-            Life_span: catData[info].life_span,
-            Description: catData[info].description,
-            Temperament: catData[info].temperament,
-            // Image: catData[info].image,
-          });
-        }
-        setDataa(datainfo);
-
-        // console.log(dataa);
-        setIsLoading(false);
-      } catch (error) {
-        setIsError(true);
-      }
-      setIsLoading(false);
-    };
-    fetchData();
-    return clearTimeout(fetchData);
-  }, []);
+    setDataa(datainfo);
+  }, [results]);
 
   // not all data is string
   const dataFilter = (rows) => {
@@ -106,17 +97,18 @@ function Dataselectapp() {
           </div>
         </form>
       </div>
-
-      {isError && <div>Something went wrong ...</div>}
-
-      {/* loading data  */}
-      {isLoading ? (
-        <div>Loading ...</div>
-      ) : (
-        <div>
-          <Datatable dataa={dataFilter(dataa)} />{" "}
-        </div>
-      )}
+      <main>
+        {status === "idle" && (
+          <div> Let's get started by searching for an article! </div>
+        )}
+        {status === "error" && <div>{error}</div>}
+        {status === "fetching" && <div className="loading"></div>}
+        {status === "fetched" && (
+          <>
+            <Datatable dataa={dataFilter(dataa)} />{" "}
+          </>
+        )}
+      </main>
     </>
   );
 }
