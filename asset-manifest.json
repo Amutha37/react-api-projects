@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/react-api-projects/static/css/main.7eec2095.chunk.css",
-    "main.js": "/react-api-projects/static/js/main.bb6549ad.chunk.js",
-    "main.js.map": "/react-api-projects/static/js/main.bb6549ad.chunk.js.map",
+    "main.css": "/react-api-projects/static/css/main.f38647bf.chunk.css",
+    "main.js": "/react-api-projects/static/js/main.beb31be1.chunk.js",
+    "main.js.map": "/react-api-projects/static/js/main.beb31be1.chunk.js.map",
     "runtime-main.js": "/react-api-projects/static/js/runtime-main.6667636a.js",
     "runtime-main.js.map": "/react-api-projects/static/js/runtime-main.6667636a.js.map",
     "static/js/2.f102579e.chunk.js": "/react-api-projects/static/js/2.f102579e.chunk.js",
     "static/js/2.f102579e.chunk.js.map": "/react-api-projects/static/js/2.f102579e.chunk.js.map",
     "index.html": "/react-api-projects/index.html",
-    "static/css/main.7eec2095.chunk.css.map": "/react-api-projects/static/css/main.7eec2095.chunk.css.map",
-    "static/js/2.f102579e.chunk.js.LICENSE.txt": "/react-api-projects/static/js/2.f102579e.chunk.js.LICENSE.txt",
-    "static/media/Menu.css": "/react-api-projects/static/media/dataimg1.941ce18e.jpeg"
+    "static/css/main.f38647bf.chunk.css.map": "/react-api-projects/static/css/main.f38647bf.chunk.css.map",
+    "static/js/2.f102579e.chunk.js.LICENSE.txt": "/react-api-projects/static/js/2.f102579e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6667636a.js",
     "static/js/2.f102579e.chunk.js",
-    "static/css/main.7eec2095.chunk.css",
-    "static/js/main.bb6549ad.chunk.js"
+    "static/css/main.f38647bf.chunk.css",
+    "static/js/main.beb31be1.chunk.js"
   ]
 }
