@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { useFetch } from "../useFetch";
+import { useFetch } from "../useAxios";
 
 import { Allcatimgtable } from "./Allcatimgtable";
 

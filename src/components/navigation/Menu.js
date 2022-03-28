@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import dataimg from "./dataimg1.jpeg";
 // data
 import data from "./menudata.json";
 
@@ -35,13 +34,16 @@ const Menu = (props) => {
       };
 
       return (
-        <div
-          className="m-item"
-          key={item.id}
-          style={openMenu ? itemStyle : null}
-          onClick={() => pushToRoute(item.route)}
-        >
-          {item.name}
+        <div className="home_page">
+          <h1>Cats and Dogs Character Traits</h1>
+          <div
+            className="m-item"
+            key={item.id}
+            style={openMenu ? itemStyle : null}
+            onClick={() => pushToRoute(item.route)}
+          >
+            {item.name}
+          </div>
         </div>
       );
     });
@@ -49,7 +51,8 @@ const Menu = (props) => {
 
   return (
     <div className="menucontainer">
-      <div className="Menu">
+      <h1>Cats and Dogs Character Traits</h1>
+      <div className="menu">
         <div className={"m-item m-logo"} onClick={() => setOpenMenu(!openMenu)}>
           Menu <i className="fab fa-react"></i>
         </div>

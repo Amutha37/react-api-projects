@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useFetch } from "../useFetch";
+import { useFetch } from "../useAxios";
 import Datatable from "./Datatable";
 
 function Dataselectapp() {

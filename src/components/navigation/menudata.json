@@ -2,7 +2,7 @@
   "menu": [
     {
       "id": "001",
-      "name": "Menu",
+      "name": "Select...",
       "route": "/"
     },
 

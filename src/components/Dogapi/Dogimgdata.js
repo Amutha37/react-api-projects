@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useFetch } from "../useFetch";
+import { useFetch } from "../useAxios";
 import { Alldogimgtable } from "./Alldogimgtable";
 
 export function Dogimgdata() {
